@@ -1,0 +1,62 @@
+<%- include("partials/dashboard.ejs") %>
+
+<div class="bg-white p-12 rounded-md shadow-md max-w-4xl w-full mx-auto h-auto">
+
+    <div class="flex items-center justify-between mb-4">
+        <h1 class="text-2xl font-bold">Availablity</h1>
+    </div>
+
+    <form action="availability/submit" method="post" id="profile_form">
+
+        <div class="grid grid-cols-1 gap-2 overflow-y-auto">
+            
+            <div class="bg-gray-100 p-3 rounded-md">
+                <div class="right_availablity items">
+                    <h3>Availability: </h3>
+                    <p>
+                        <%= locals.db.availability %>
+                    </p>
+                    <div class="ratio_availablity hidden">
+                        Yes <input type="radio" name="availability" value="true"
+                            <%=locals.db.availability=== true ? 'checked' : '' %>>
+                        No <input type="radio" name="availability" value="false"
+                            <%=locals.db.availability=== false ? 'checked' : '' %>>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="flex justify-end mt-4 space-x-4">
+        <button id="editProfileBtn"
+            class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-[#3d5a80] text-white hover:bg-[#2b4860] h-9 rounded-md px-4">
+            <i class="fas fa-edit mr-2"></i>
+            Edit
+        </button>
+        <button id="submitButton"
+            type="submit"
+            onclick="document.querySelector('#profile_form').submit()"
+            class="hidden inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-[#3d5a80] text-white hover:bg-[#2b4860] h-9 rounded-md px-4">
+            <i class="fas fa-check mr-2"></i>
+            Submit
+        </button>
+    </div>
+</div>
+<script>
+    // JavaScript to toggle visibility of <p> and <input> elements when "Edit Profile" button is clicked
+    document.getElementById("editProfileBtn").addEventListener("click", function () {
+        // Get all <p> and <input> elements inside the ad_body_2 div
+        var elements = document.querySelectorAll(".hide_element p, .hide_element input, .ratio_availablity, .right_availablity p");
+        
+        document.getElementById("editProfileBtn").classList.toggle("hidden");
+        document.getElementById("submitButton").classList.toggle("hidden");
+
+        // Loop through each element and toggle the 'hidden' class
+        elements.forEach(function (element) {
+            element.classList.toggle("hidden");
+        });
+
+    });
+</script>
+
+<%- include("partials/footer.ejs") %>

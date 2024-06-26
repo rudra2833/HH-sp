@@ -1,0 +1,8 @@
+/.vscode
+/node_modules
+
+# In this files dont use prettier as it will change the formate ie dont edit this files
+
+*.env
+.env
+.env*

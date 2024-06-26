@@ -1,0 +1,43 @@
+<%- include("partials/dashboard.ejs") %>
+
+    
+<main class="px-6 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+        
+
+        <a class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col gap-4 w-[300px] h-[220px]"
+            href="/sp/profile">
+            <i class="fas fa-users text-4xl text-gray-500"></i>
+            <h2 class="text-lg font-bold">Edit Personal Information</h2>
+            <p class="text-gray-500">
+                View and manage information.
+            </p>
+        </a>
+
+
+        <a class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col gap-4 w-[300px] h-[220px]"
+            href="/sp/newrequest">
+            <i class="fas fa-inbox text-4xl text-gray-500"></i>
+            <h2 class="text-lg font-bold">New Requests</h2>
+            <p class="text-gray-500">
+                Review and process new Customer requests.
+            </p>
+        </a>
+
+        <a class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col gap-4 w-[300px] h-[220px]"
+            href="/sp/charges&pincodes">
+            <i class="fas fa-map-marker-alt text-4xl text-gray-500"></i>
+            <h2 class="text-lg font-bold">Charges & Pincodes</h2>
+            <p class="text-gray-500">View and Change charges and Pincodes</p>
+        </a>
+
+        <a class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 flex flex-col gap-4 w-[300px] h-[220px]"
+            href="/sp/availability">
+            <i class="fas fa-calendar-check text-4xl text-gray-500"></i>
+            <h2 class="text-lg font-bold">Availablity</h2>
+            <p class="text-gray-500">
+                Check Availablity
+            </p>
+        </a>
+
+    </main>
+    <%- include("partials/footer.ejs") %>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sp Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="flex flex-col min-h-[88vh]">
+
+        <header class="bg-gray-900 text-white px-6 py-4 flex items-center justify-between"
+            style="background-color: #3d5a80">
+            <h1 class="text-2xl font-bold">Dashboard</h1>
+        </header>
+
+        <div class="flex h-auto">
+            <aside
+                class="w-80 bg-[#1e3a8a] text-white mx-4 my-4 rounded-md overflow-y-auto flex flex-col justify-between bg-[#3d5a80]">
+                <div>
+                    <div class="flex flex-col items-center py-6">
+                        <span class="relative flex shrink-0 overflow-hidden items-center">
+                            <img src="<%= locals.db.avatar %>" alt="" style="height: 220px; width: 200px;">
+                        </span>
+                        <div class="mt-3 text-center">
+                            <p class="text-lg font-semibold">Welcome</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col ml-5">
+                        <p class="block py-2 transition-colors nav-item">
+                            Name: <br><%= locals.db.providername %>
+                        </p>
+
+                        <p class="block py-2 transition-colors nav-item">
+                            Email: <br><%= locals.db.email %>
+                        </p>
+
+                        <p class="block py-2 transition-colors nav-item">
+                            Phoneno: <br><%= locals.db.phoneno %>
+                        </p>
+
+                        <p class="block py-2 transition-colors nav-item">
+                            Category: <br><%= locals.db.category %>
+                        </p>
+                    </div>
+                </div>
+
+                <form action="/sp/logout" method="POST" class="mt-8 text-center py-4 mx-auto">
+                    <button type="submit" class="block py-2 btn-reset">
+                        <i class="fas fa-sign-out-alt w-5 h-5 mr-2 inline-block"></i>
+                        Log out
+                    </button>
+                </form>
+            </aside>
+

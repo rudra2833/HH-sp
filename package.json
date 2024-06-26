@@ -1,0 +1,26 @@
+{
+  "name": "helpershandsp",
+  "version": "1.0.0",
+  "description": "Website for providing local service provider",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
+  },
+  "author": "Rudra P Patel",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mime": "^4.0.1",
+    "moment": "^2.30.1",
+    "mongoose": "^8.2.2",
+    "nodemailer": "^6.9.14",
+    "nodemon": "^3.1.0"
+  }
+}
