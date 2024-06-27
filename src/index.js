@@ -77,11 +77,10 @@ app.get("/sp/newrequest", async (req, res) => {
 
 // to update the request
 import{spbookingRequestupdate} from "./controllers/sp.controller.js";
-app.post("/sp/updateRequest", spbookingRequestupdate);
 
-
-
-
+app.post("/sp/updateRequest", async (req,res)=>{
+    spbookingRequestupdate(req,res,spLoggedIn);
+})
 
 
 
