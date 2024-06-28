@@ -33,7 +33,7 @@ const sendEmail = async (to, subject, html) => {
 const reqAcceptedMail = async (user, serviceProvider,bookingtab)=>{
     // Send email to user
     // const userEmail = user.email;
-    const userEmail = "monkeydluffy1483@gmail.com";
+    const userEmail = user.email;
     const userSubject = "Your Service Request has been Accepted!";
     const userHtml = `<p style="color: black;">Dear <strong>${user.username}</strong>,</p>
     <h1>Your request has been Accepted</h1>
@@ -74,7 +74,7 @@ const reqAcceptedMail = async (user, serviceProvider,bookingtab)=>{
 
     // Send email to service provider
     // const providerEmail = serviceProvider.email;
-    const providerEmail = "rudrapatel2833@gmail.com";
+    const providerEmail = serviceProvider.email;
     const providerSubject = "Service Request Accepted - Next Steps";
     const providerHtml = `<p>Dear ${serviceProvider.providername},</p>
     <h1>You have Accepted the Service Request</h1>
@@ -112,7 +112,7 @@ const reqAcceptedMail = async (user, serviceProvider,bookingtab)=>{
 const reqRejectedMail = async (user, serviceProvider,bookingtab)=>{
     // Send email to user
     // const userEmail = user.email;
-    const userEmail = "monkeydluffy1483@gmail.com";
+    const userEmail = user.email;
     const userSubject = "Your Service Request has been Rejected!";
     const userHtml = `<p style="color: black;">Dear <strong>${user.username}</strong>,</p>
     <h1>Your request has been Rejected</h1>
@@ -348,7 +348,7 @@ const spbookingRequestupdate  = async (req, res, spLoggedIn) => {
 
     const bookingtab = await Booking.findById(id);
     const user = await User.findById(customerId).select('username email phoneno');
-    const serviceProvider = await ServiceInfo.findById(spLoggedIn).select('providername category phoneno');
+    const serviceProvider = await ServiceInfo.findById(spLoggedIn).select('providername category phoneno email');
 
     //HERE SENDING THE EMAIL FOR THE SAME
   try {
